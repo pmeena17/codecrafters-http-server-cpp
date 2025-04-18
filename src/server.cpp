@@ -7,6 +7,7 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <ws2spi.h>
+#include <tchar.h>
 #define access _access
 #else
 #include <unistd.h>
@@ -15,7 +16,6 @@
 #include <netdb.h>
 #endif
 #include <sys/types.h>
-#include <tchar.h>
 #undef main
 
 int main()
