@@ -9,6 +9,7 @@
 #include <ws2spi.h>
 #include <tchar.h>
 #define access _access
+#define close _close
 #else
 #include <unistd.h>
 #include <sys/socket.h>
@@ -66,7 +67,7 @@ int main()
     accept(server_fd, (struct sockaddr *)&client_addr, (socklen_t *)&client_addr_len);
     std::cout << "Client connected\n";
 
-    _close(server_fd);
+    close(server_fd);
 
     return 0;
 }
