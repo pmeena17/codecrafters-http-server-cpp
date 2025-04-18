@@ -67,6 +67,14 @@ int main()
     accept(server_fd, (struct sockaddr *)&client_addr, (socklen_t *)&client_addr_len);
     std::cout << "Client connected\n";
 
+    const char* response = "HTTP/1.1 200 OK\r\n\r\n";
+    int bytes_sent = send(server_fd, response, sizeof(response), 0);
+    if (bytes_sent < 0)
+    {
+        std::cerr << "send failed\n";
+        return 1;
+    }
+
     close(server_fd);
 
     return 0;
